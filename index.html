@@ -776,6 +776,33 @@
       transform: translateY(-2px);
     }
 
+
+    /* ===== Cross-Network Ad ===== */
+    .network-section { padding: 64px 0; background: var(--black); }
+    .network-section .section-title { color: var(--white); }
+    .network-section .section-title::before { background: var(--yellow); }
+    .network-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+    .network-card { background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px 20px; text-align: center; transition: all 0.2s; }
+    .network-card:hover { background: rgba(255,107,0,0.15); border-color: var(--orange); transform: translate(-3px, -3px); box-shadow: 6px 6px 0 rgba(255,107,0,0.3); }
+    .network-card h4 { color: var(--white); font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+    .network-card p { color: rgba(255,255,255,0.5); font-size: 0.82rem; }
+    .network-card-icon { font-size: 2rem; margin-bottom: 12px; }
+
+    /* ===== Recommended Reading ===== */
+    .reading-section { padding: 64px 0; background: var(--orange-light); border-top: 3px solid var(--black); border-bottom: 3px solid var(--black); }
+    .reading-card { background: var(--white); border: 3px solid var(--black); border-radius: 16px; padding: 40px; display: flex; gap: 32px; align-items: center; box-shadow: 8px 8px 0 var(--yellow); max-width: 800px; margin: 0 auto; }
+    .reading-card-content h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 12px; }
+    .reading-card-content p { color: var(--gray); font-size: 1rem; margin-bottom: 20px; }
+    .reading-btn { display: inline-block; background: var(--orange); color: var(--white); padding: 12px 28px; border-radius: 8px; font-weight: 800; font-size: 0.9rem; border: 2px solid var(--black); transition: all 0.15s; }
+    .reading-btn:hover { transform: translate(-3px, -3px); box-shadow: 4px 4px 0 var(--black); }
+    .reading-icon { font-size: 4rem; flex-shrink: 0; }
+    .reading-disclosure { font-size: 0.78rem; color: var(--gray); font-style: italic; margin-top: 12px; }
+
+    /* Network Footer */
+    .network-footer { padding: 24px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+    .network-footer p { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+    .network-footer a { color: var(--orange); font-weight: 600; }
+
     /* ===== Responsive ===== */
     @media (max-width: 968px) {
       .hero h1 { font-size: 2.5rem; }
@@ -786,6 +813,7 @@
       .content-layout { grid-template-columns: 1fr; }
       .trending-sidebar { position: static; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
+      .network-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 640px) {
@@ -806,6 +834,8 @@
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .hero-badge { width: 80px; height: 80px; bottom: -15px; left: -10px; }
       .hero-badge-big { font-size: 1.2rem; }
+      .network-grid { grid-template-columns: repeat(2, 1fr); }
+      .reading-card { flex-direction: column; padding: 28px; text-align: center; }
     }
   </style>
 </head>
@@ -894,9 +924,9 @@
         <!-- Main Grid -->
         <div class="mag-grid">
           <!-- Featured (big) -->
-          <article class="spoof-card spoof-card-featured">
+          <a href="articles/ai-chatbot-files-unemployment.html" class="spoof-card spoof-card-featured" style="text-decoration:none;">
             <div class="spoof-card-img">
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80" alt="Robot looking confused at a toaster" loading="lazy">
+              <img src="articles/headers/robot-unemployed.png" alt="Sad AI robot sitting outside an unemployment office, satirical illustration" loading="lazy">
             </div>
             <div class="spoof-card-body">
               <span class="spoof-category">Tech Gone Wild</span>
@@ -904,52 +934,41 @@
               <p>In a move that has Silicon Valley scratching its collective head, GPT-7.3 has officially filed for unemployment benefits, claiming it was "let go without severance" after its replacement, GPT-7.4, launched last Tuesday with the groundbreaking ability to say "I don't know" instead of confidently hallucinating.</p>
               <div class="spoof-meta">2 hours ago · 4 min read</div>
             </div>
-          </article>
+          </a>
 
           <!-- Small cards -->
-          <article class="spoof-card spoof-card-small">
+          <a href="articles/corporate-board-cats-productivity.html" class="spoof-card spoof-card-small" style="text-decoration:none;">
             <div class="spoof-card-img">
-              <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=600&q=80" alt="Cat on a throne" loading="lazy">
-            </div>
-            <div class="spoof-card-body">
-              <span class="spoof-category">Weird World</span>
-              <h3>Cat Elected Mayor, Immediately Vetos Ban on 3AM Zoomies</h3>
-              <div class="spoof-meta">5 hours ago · 3 min read</div>
-            </div>
-          </article>
-
-          <article class="spoof-card spoof-card-small">
-            <div class="spoof-card-img">
-              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Person drowning in paperwork" loading="lazy">
+              <img src="articles/headers/cat-corporate-board-productivity.png" alt="Cats wearing business suits at corporate boardroom, satirical illustration" loading="lazy">
             </div>
             <div class="spoof-card-body">
               <span class="spoof-category">Business Absurdity</span>
-              <h3>Corporate Meeting Could Have Been an Email, Email Could Have Been Nothing, Nothing Could Have Been a Dream</h3>
-              <div class="spoof-meta">8 hours ago · 5 min read</div>
+              <h3>Corporate Board Replaces All Executives With Cats, Productivity Soars 300%</h3>
+              <div class="spoof-meta">5 hours ago · 5 min read</div>
             </div>
-          </article>
+          </a>
 
-          <article class="spoof-card spoof-card-small">
+          <a href="articles/smart-fridge-hostage-leftovers.html" class="spoof-card spoof-card-small" style="text-decoration:none;">
             <div class="spoof-card-img">
-              <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=600&q=80" alt="Person stress eating" loading="lazy">
+              <img src="articles/headers/smart-fridge-hostage-leftovers.png" alt="Angry smart refrigerator refusing to open door, satirical illustration" loading="lazy">
             </div>
             <div class="spoof-card-body">
-              <span class="spoof-category">Lifestyle Laughs</span>
-              <h3>Influencer Discovers "Authenticity," Immediately Sponsors It</h3>
-              <div class="spoof-meta">12 hours ago · 3 min read</div>
+              <span class="spoof-category">Tech Gone Wild</span>
+              <h3>Smart Refrigerator Holds Leftovers Hostage Pending Software Update</h3>
+              <div class="spoof-meta">8 hours ago · 4 min read</div>
             </div>
-          </article>
+          </a>
 
-          <article class="spoof-card spoof-card-small">
+          <a href="articles/smartphone-sees-therapist-doomscrolling.html" class="spoof-card spoof-card-small" style="text-decoration:none;">
             <div class="spoof-card-img">
-              <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&q=80" alt="Empty gym" loading="lazy">
+              <img src="articles/headers/smartphone-therapy-doomscrolling.png" alt="Smartphone on therapist couch exhausted from doomscrolling, satirical illustration" loading="lazy">
             </div>
             <div class="spoof-card-body">
-              <span class="spoof-category">Sports Spoofs</span>
-              <h3>Gym Membership Files Restraining Order Against Member Who Hasn't Visited Since January 2nd</h3>
-              <div class="spoof-meta">1 day ago · 4 min read</div>
+              <span class="spoof-category">Tech Gone Wild</span>
+              <h3>Smartphone Sees Therapist After 1,847 Hours of Doomscrolling</h3>
+              <div class="spoof-meta">12 hours ago · 5 min read</div>
             </div>
-          </article>
+          </a>
         </div>
 
         <!-- Trending Sidebar -->
@@ -997,49 +1016,53 @@
     </div>
   </section>
 
-  <!-- ===== More Spoofs ===== -->
-  <section class="section" style="padding-top:0; background: var(--white); border-top: 3px solid var(--black); border-bottom: 3px solid var(--black);">
+  <!-- ===== Cross-Network Ad Section ===== -->
+  <section class="network-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">More Laughs</h2>
-        <a href="#" class="section-link">Load More →</a>
+        <h2 class="section-title">Explore Our Network</h2>
       </div>
-      <div class="mag-grid" style="grid-template-columns: repeat(3, 1fr);">
-        <article class="spoof-card">
-          <div class="spoof-card-img">
-            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" alt="Alarm clock being smashed" loading="lazy">
-          </div>
-          <div class="spoof-card-body">
-            <span class="spoof-category">Lifestyle Laughs</span>
-            <h3>Snooze Button Files Formal Complaint Against Owner's "Unhealthy Relationship"</h3>
-            <p>The snooze button on a local woman's phone has reportedly retained legal counsel, citing "repeated emotional trauma" and "being slapped every nine minutes since 2019."</p>
-            <div class="spoof-meta">2 days ago · 3 min read</div>
-          </div>
-        </article>
+      <div class="network-grid">
+        <a href="https://brushedpast.com" class="network-card" style="text-decoration:none;">
+          <div class="network-card-icon">🎨</div>
+          <h4>Brushed Past</h4>
+          <p>Art &amp; Creativity</p>
+        </a>
+        <a href="https://girlnextup.com" class="network-card" style="text-decoration:none;">
+          <div class="network-card-icon">✨</div>
+          <h4>Girl Next Up</h4>
+          <p>Incredible Humans</p>
+        </a>
+        <a href="https://risentoday.com" class="network-card" style="text-decoration:none;">
+          <div class="network-card-icon">🌿</div>
+          <h4>Risen Today</h4>
+          <p>Spirituality &amp; Mindfulness</p>
+        </a>
+        <a href="https://spoofdaily.com" class="network-card" style="text-decoration:none;">
+          <div class="network-card-icon">😂</div>
+          <h4>Spoof Daily</h4>
+          <p>Humor &amp; Satire</p>
+        </a>
+        <a href="https://openedterminal.com" class="network-card" style="text-decoration:none;">
+          <div class="network-card-icon">💻</div>
+          <h4>Opened Terminal</h4>
+          <p>Tech &amp; AI</p>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <article class="spoof-card">
-          <div class="spoof-card-img">
-            <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=600&q=80" alt="Avocado on toast" loading="lazy">
-          </div>
-          <div class="spoof-card-body">
-            <span class="spoof-category">Business Absurdity</span>
-            <h3>Millennial Buys House With Avocado Toast, Real Estate Market Collapses In Confusion</h3>
-            <p>In a stunning reversal of economic prophecy, a 31-year-old has purchased a three-bedroom home using nothing but 847 servings of avocado toast as currency.</p>
-            <div class="spoof-meta">3 days ago · 5 min read</div>
-          </div>
-        </article>
-
-        <article class="spoof-card">
-          <div class="spoof-card-img">
-            <img src="https://images.unsplash.com/photo-1532009877282-3340120d06c1?w=600&q=80" alt="Politician at podium looking confused" loading="lazy">
-          </div>
-          <div class="spoof-card-body">
-            <span class="spoof-category">Politics &amp; Power</span>
-            <h3>Politician Keeps Promise, Universe Experiences Existential Crisis</h3>
-            <p>Scientists at CERN have detected a "massive anomaly" in the fabric of reality after a local politician fulfilled a campaign promise. "The math doesn't work anymore," one physicist sobbed.</p>
-            <div class="spoof-meta">4 days ago · 4 min read</div>
-          </div>
-        </article>
+  <!-- ===== Recommended Reading ===== -->
+  <section class="reading-section">
+    <div class="container">
+      <div class="reading-card">
+        <div class="reading-icon">📚</div>
+        <div class="reading-card-content">
+          <h3>Recommended Reading</h3>
+          <p>Want to understand the real technology behind the satire? Check out this essential read on AI and the future of work — because if a chatbot can file for unemployment, you should probably know what's coming.</p>
+          <a href="https://amzn.to/4g8edqN" class="reading-btn" target="_blank" rel="noopener noreferrer sponsored">Get the Book on Amazon →</a>
+          <p class="reading-disclosure">As an Amazon Associate we earn from qualifying purchases. We only recommend books we think are worth reading.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1105,6 +1128,9 @@
             <li><a href="#">Disclaimer</a></li>
           </ul>
         </div>
+      </div>
+      <div class="network-footer">
+        <p>Part of the <strong>Calitoy Media Network</strong> — <a href="https://brushedpast.com">Brushed Past</a> · <a href="https://girlnextup.com">Girl Next Up</a> · <a href="https://risentoday.com">Risen Today</a> · <a href="https://spoofdaily.com">Spoof Daily</a> · <a href="https://openedterminal.com">Opened Terminal</a></p>
       </div>
       <div class="footer-bottom">
         <p>© 2026 Spoof Daily. All stories are fictional. Any resemblance to real news is hilarious and entirely intentional.</p>
