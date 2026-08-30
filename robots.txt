@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://spoofdaily.com/sitemap.xml
